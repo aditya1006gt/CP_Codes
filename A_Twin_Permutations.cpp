@@ -12,7 +12,6 @@ using namespace std;
 #define fr(i,a,b) for(ll i=a; i>=b; i--)
 #define fa(v) for(auto &it : (v))
 #define all(a) (a).begin(), (a).end()
-#define rall(a) (a).rbegin(), (a).rend()
 #define ff first
 #define ss second
 #define sp " "
@@ -119,20 +118,16 @@ void unite_sets(ll a,ll b){
 }
 
 void solve(){
-    int n;cin>>n;
-    map<ll,ll> mpp;
-    ll c=0,b=0;
+    ll n;cin >>n;
     vll a(n);
-    f(i,0,n){
+    ll mx=0;
+    f(i,0,n)
+    {
         cin>>a[i];
+        mx=max(a[i],mx);
     }
-    sort(all(a));
-    if(a[0]==a[n-1]){
-        cout<<"No"<<endl;
-        return;
-    }
-    cout<<"Yes"<<endl<<a[n-1]<<sp;
-    f(i,0,n-1) cout<<a[i]<<sp;
+    f(i,0,n)
+    cout<<(mx+1-a[i])<<" ";
     cout<<endl;
 }
 
