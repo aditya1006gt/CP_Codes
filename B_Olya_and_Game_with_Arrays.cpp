@@ -118,13 +118,18 @@ void unite_sets(ll a,ll b){
 }
 
 void solve(){
-    int n;cin>>n;
-    int a=3*n;
-    for(int i=1;i<=n;i++) {
-        cout<<i<<" "<<a-1<<" "<<a<<" ";
-        a-=2;
+    ll n,m,mnn=LLONG_MAX,mnns=LLONG_MAX,s=0;
+    cin>>n;
+    while(n--){
+        cin>>m;
+        vll a(m);
+        f(i,0,m) cin>>a[i];
+        sort(all(a));
+        mnn=min(mnn,a[0]);
+        mnns=min(mnns,a[1]);
+        s+=a[1];
     }
-    cout<<endl;
+    cout<<s-mnns+mnn<<endl;
 }
 
 int main(){
