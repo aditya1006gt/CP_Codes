@@ -120,7 +120,7 @@ void unite_sets(ll a,ll b){
 
 void solve(vector<bool> &isPrime) {
     ll n,i=2,p=1,c=1;cin>>n;
-    cout<<"1 ";
+    cout<<"1 "; 
     while(1) {
         if(isPrime[i]) {
             cout<<i*p<<" ";
